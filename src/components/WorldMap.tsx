@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { geoEqualEarth, geoPath } from "d3-geo";
+import { geoOrthographic, geoPath } from "d3-geo";
 import { Topology } from "topojson-specification";
 import { feature } from "topojson-client";
 import {
@@ -27,9 +27,9 @@ import Country from "./Country";
     * translate: number[]
 */
 
-const projection = geoEqualEarth()
-  .scale(160)
-  .translate([800 / 2, 450 / 2]);
+const projection = geoOrthographic()
+  .scale(240)
+  .translate([800 / 2, 600 / 2]);
 
 const WorldMap = (props: any) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -50,7 +50,8 @@ const WorldMap = (props: any) => {
             Accept: "application/json",
           },
         }).then((response) => {
-          // const data = response.json();
+          // See if this can be cleaned up
+
           response.json().then((body) => {
             console.log("body", body);
 
@@ -79,7 +80,7 @@ const WorldMap = (props: any) => {
 
   // Event handler for when Country emits a focus event (click or mouseover)
   const handleCountryChange = (countryId: any) => {
-    console.log("WorldMap Country Change: ", countryId);
+    // console.log("WorldMap Country Change: ", countryId);
 
     // bubble up to the Dashboard
     props.onCountryChange(countryId);
@@ -88,13 +89,14 @@ const WorldMap = (props: any) => {
   return isLoading ? (
     <div>Loading...</div>
   ) : (
-    <svg width={800} height={450} viewBox="0 0 800 450">
+    <svg width={800} height={600} viewBox="0 0 800 600">
       <g className="countries">
         {!geographies
           ? "Loading data..."
           : geographies.map((d, i, a) => (
               <Country
                 key={i}
+                options={d}
                 d={geoPath().projection(projection)(d)}
                 i={i}
                 onCountryChange={handleCountryChange}

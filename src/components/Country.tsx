@@ -7,25 +7,29 @@ import React, { useState } from "react";
  */
 const Country = (props: {
   onCountryChange: (arg0: any) => void;
-  i: any;
+  i: number;
   d: any;
+  options: any;
 }) => {
   // Use the `useState` hook to store local state
   const [hovered, setHovered] = useState(false);
 
-  const handleCountryClick = (countryIndex: any) => {
-    console.log("Clicked on country index: ", countryIndex);
-    props.onCountryChange(props.i);
+  const handleCountryClick = () => {
+    props.onCountryChange(props.options.properties.name);
   };
 
   const handleMouseEnter = () => {
     setHovered(true);
-    props.onCountryChange(props.i);
+    props.onCountryChange(props.options.properties.name);
   };
 
   const handleMouseLeave = () => {
     setHovered(false);
   };
+
+  // console.log(`${props.i} ${props.d}`);
+  // console.log(`${JSON.stringify(props.options)}`);
+  // console.log(`${props.options.id} ${props.options.properties.name}`);
 
   return (
     <path
@@ -34,7 +38,7 @@ const Country = (props: {
       fill={hovered ? "red" : "rgb(67.8, 84.7, 90.2)"}
       stroke={hovered ? "red" : "#FFFFFF"}
       strokeWidth={1}
-      onClick={() => handleCountryClick(props.i)}
+      onClick={handleCountryClick}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     />

@@ -1,0 +1,14 @@
+.panel {
+  width: 200px;
+  border: 1px solid;
+}
+
+.panel > * {
+  float: left;
+}
+
+.country-name-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
