@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/reddit-world-recipes/static/css/main.69c8d43c.chunk.css",
+    "main.js": "/reddit-world-recipes/static/js/main.dd37d567.chunk.js",
+    "main.js.map": "/reddit-world-recipes/static/js/main.dd37d567.chunk.js.map",
+    "runtime-main.js": "/reddit-world-recipes/static/js/runtime-main.0f50b045.js",
+    "runtime-main.js.map": "/reddit-world-recipes/static/js/runtime-main.0f50b045.js.map",
+    "static/js/2.c5afcf63.chunk.js": "/reddit-world-recipes/static/js/2.c5afcf63.chunk.js",
+    "static/js/2.c5afcf63.chunk.js.map": "/reddit-world-recipes/static/js/2.c5afcf63.chunk.js.map",
+    "index.html": "/reddit-world-recipes/index.html",
+    "precache-manifest.78279628005b1d16abd398784495048e.js": "/reddit-world-recipes/precache-manifest.78279628005b1d16abd398784495048e.js",
+    "service-worker.js": "/reddit-world-recipes/service-worker.js",
+    "static/css/main.69c8d43c.chunk.css.map": "/reddit-world-recipes/static/css/main.69c8d43c.chunk.css.map",
+    "static/js/2.c5afcf63.chunk.js.LICENSE.txt": "/reddit-world-recipes/static/js/2.c5afcf63.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0f50b045.js",
+    "static/js/2.c5afcf63.chunk.js",
+    "static/css/main.69c8d43c.chunk.css",
+    "static/js/main.dd37d567.chunk.js"
+  ]
+}
