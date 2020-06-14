@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { geoEqualEarth, geoPath } from "d3-geo";
-// import { WorldAtlas } from "topojson";
 import { Topology } from "topojson-specification";
 import { feature } from "topojson-client";
 import {
@@ -31,18 +30,6 @@ import Country from "./Country";
 const projection = geoEqualEarth()
   .scale(160)
   .translate([800 / 2, 450 / 2]);
-
-// const enforceFeatureType = (
-//   topology: WorldAtlas,
-//   o: GeometryObject<GeoJsonProperties>
-// ) => {
-//   return o.type === "GeometryCollection"
-//     ? {
-//         type: "FeatureCollection",
-//         features: o.geometries.map((o) => feature(topology, o)),
-//       }
-//     : feature(topology, o);
-// };
 
 const WorldMap = (props: any) => {
   const [isLoading, setIsLoading] = useState(false);
